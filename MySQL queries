@@ -1,0 +1,21 @@
+create table users(
+	Username varchar(30) Primary Key,
+	Firstname varchar(20),
+	Lastname varchar(20),
+	Password varchar(20) NOT NULL
+);
+
+insert into users values("admin", "admin", "admin", "admin");
+
+create table events(
+	EventId int(4) Primary Key,
+	Title varchar(40) NOT NULL,
+	Description varchar(100),
+	LocationInfo varchar(40),
+	Date date,
+	Participants int(2),
+	Username_FK varchar(30),
+	Foreign Key (Username_FK) references users(Username)
+);
+
+insert into events values(1, "blin", "cook blin", "blin day", '01-02-2020', 2, "admin");
