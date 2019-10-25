@@ -1,7 +1,11 @@
 package com.events.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -9,12 +13,16 @@ import javax.persistence.Table;
 public class Events {
 
 	@Id
+	@GeneratedValue
 	private int eventid;
 	private String title;
 	private String description;
 	private String locationinfo;
 	private String date;
-	private String username_fk;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="username_FK", referencedColumnName="username")
+	private Users username_fk;
+	
 	public int getEventid() {
 		return eventid;
 	}
@@ -45,12 +53,10 @@ public class Events {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getUsername_fk() {
+	public Users getUsername_fk() {
 		return username_fk;
 	}
-	public void setUsername_fk(String username_fk) {
+	public void setUsername_fk(Users username_fk) {
 		this.username_fk = username_fk;
 	}
-	
-	
 }

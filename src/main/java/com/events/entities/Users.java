@@ -2,6 +2,7 @@ package com.events.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class Users {
 	
 	@Id
+//	@OneToMany
 	private String username;
 	private String firstname;
 	private String lastname;
