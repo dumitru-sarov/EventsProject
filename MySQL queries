@@ -5,7 +5,7 @@ create table users(
 	Password varchar(20) NOT NULL
 );
 
-insert into users values("dsarov", "Dumitru", "Sarov", "password");
+insert into users values("jsmith", "John", "Smith", "pass");
 
 create table events(
 	EventId int(4) Primary Key,
@@ -13,12 +13,11 @@ create table events(
 	Description varchar(100),
 	LocationInfo varchar(40),
 	Date date,
-	Participants int(2),
 	Username_FK varchar(30),
 	Foreign Key (Username_FK) references users(Username)
 );
 
-insert into events values(1, "blin", "cook blin", "blin day", '2020-01-01', 2, "dsarov");
+insert into events values(3, "blin", "cook blin", "blin day", '2020-01-01', "jsmith");
 
 create table comments(
 	Commentid int(9),
@@ -30,6 +29,6 @@ create table comments(
 	Foreign Key (Username_FK) references users(Username)	
 );
 
-insert into comments values(2, "dsarov", "This is a test comment number 3", curdate(), 1);
+insert into comments values(4, "jsmith", "This is a test comment number 3", curdate(), 2);
 
 select * from events inner join comments on events.eventid = comments.eventsid_fk;
