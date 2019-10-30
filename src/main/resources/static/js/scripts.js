@@ -1,4 +1,5 @@
 var closingID;
+var host = location.hostname;
 
 function makeTableBody (data) {
 
@@ -50,7 +51,7 @@ function makeTableBody (data) {
 }
 
 function showEvents() {
-  axios.get('http://localhost:9090/allEvent').then(response => {
+  axios.get('http://' + host + ':9090/allEvent').then(response => {
     makeTableBody(response.data);
     console.log(response.data);
   });
@@ -72,7 +73,7 @@ function postEvent() {
 
   console.log("hello");
   console.log(JSON.stringify(body));
-  axios.post('http://localhost:9090/saveEvent', JSON.stringify(body), {
+  axios.post('http://' + host + ':9090/saveEvent', JSON.stringify(body), {
     headers: {
       'Content-Type' : 'application/json'
     }
@@ -100,7 +101,7 @@ function getRowId(id) {
 
   console.log(closingID);
 
-  axios.get('http://localhost:9090/eventById/' + id).then(response => {
+  axios.get('http://' + host + ':9090/eventById/' + id).then(response => {
     console.log(response.data);
 
     var row = document.getElementById("row" + id);
@@ -135,7 +136,7 @@ function getRowId(id) {
 
     console.log("hello");
     console.log(JSON.stringify(body));
-    axios.put('http://localhost:9090/updateEvent/' + eventNum, JSON.stringify(body), {
+    axios.put('http://' + host + ':9090/updateEvent/' + eventNum, JSON.stringify(body), {
       headers: {
         'Content-Type' : 'application/json'
       }
