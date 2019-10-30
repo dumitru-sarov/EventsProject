@@ -13,14 +13,14 @@ import com.events.entities.Events;
 
 @Repository
 public interface EventsRepo extends JpaRepository<Events, Integer>{
-
 	
 	public Events findByEventid(int eventid);
 
-	public ArrayList<Events> findAll();
+	public ArrayList<Events> findAllByOrderByEventidAsc();
+	
+	@Transactional
+	public void deleteByEventid(int eventid);
 
-//	@Transactional
-//	@Modifying
-//	public void updateEvent(Events event, int eventid);
+
 	
 }

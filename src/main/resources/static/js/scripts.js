@@ -29,7 +29,7 @@ function makeTableBody (data) {
     deleteButton.innerHTML = "Delete";
     $(deleteButton).attr("class", "btn btn-default");
     $(deleteButton).attr("id", dataJson.eventid);
-    // $(deleteButton).attr("onclick", "getRowId(this.id)");
+    $(deleteButton).attr("onclick", "deleteRecord(this.id)");
 
     $(tr).attr("id", "row" + dataJson.eventid);
 
@@ -153,9 +153,19 @@ function getRowId(id) {
     $(updateEventId).attr("id", "updateEvent")
     $(updateEventId).attr("onsubmit", "return postEvent(this)");
   }
-  // var close1 = document.getElementById('close1');
-  // var close2 = document.getElementById('close2');
-  //
-  // close1.addEventListener("click", closing());
-  // close2.addEventListener("click", closing());
+
+  function deleteRecord(id) {
+	    var deleteRow = document.getElementById('row' + id);
+	    console.log(deleteRow);
+
+	    axios.delete('http://' + host + ':9090/deleteEvent/' + id, {
+	      headers: {
+	        'Content-Type' : 'application/json'
+	      }
+	    });
+
+	    deleteRow.remove();
+
+	    console.log(id);
+	  }
   showEvents();
