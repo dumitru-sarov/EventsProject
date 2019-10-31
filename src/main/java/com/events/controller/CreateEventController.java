@@ -24,7 +24,7 @@ import com.events.services.EventsService;
 
 
 @RestController
-@CrossOrigin()
+@CrossOrigin("*")
 public class CreateEventController {
 
 	@Autowired
@@ -61,7 +61,6 @@ public class CreateEventController {
 		eventService.updateEvent(event, eventid);
 	}
 	
-	@CrossOrigin
 	@DeleteMapping("deleteEvent/{eventid}")
 	public void deleteEvent(@PathVariable int eventid) {
 		eventService.deleteEvent(eventid);
