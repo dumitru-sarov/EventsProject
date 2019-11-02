@@ -11,7 +11,7 @@ html {
 .parallax {
   height: 100%;
 
-  background-image: url('imgs/time.jpg');
+  background-image: url('time.jpg');
 /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
