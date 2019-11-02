@@ -1,12 +1,7 @@
 //package com.events.entities;
 //
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import javax.persistence.CascadeType;
 //import javax.persistence.Entity;
 //import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 //import javax.persistence.Table;
 //
 //@Entity
@@ -20,22 +15,7 @@
 //	private String firstname;
 //	private String lastname;
 //	private String password;
-//	@OneToMany(cascade = CascadeType.ALL)
-//	private List<Events> events = new ArrayList<Events>();
-//	@OneToMany(cascade = CascadeType.ALL)
-//	private List<Comments> comments = new ArrayList<Comments>(); 
-//	public List<Events> getEvents() {
-//		return events;
-//	}
-//	public void setEvents(List<Events> events) {
-//		this.events = events;
-//	}
-//	public List<Comments> getComments() {
-//		return comments;
-//	}
-//	public void setComments(List<Comments> comments) {
-//		this.comments = comments;
-//	}
+//
 //	public String getUsername() {
 //		return username;
 //	}

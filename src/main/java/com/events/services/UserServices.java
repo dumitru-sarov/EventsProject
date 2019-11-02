@@ -22,15 +22,19 @@
 //		userRepo.save(user);
 //	}
 //	
-//	public Users findByUser(String username) {
+//	public Users findUser(String username) {
 //		return userRepo.findByUsername(username);
 //	}
 //	
-//	public void updateUser(String username, String newUsername) {
-//		userRepo.updateByUsername(username, newUsername);
-//	}
+////	public Users findByUser(String username) {
+////		return userRepo.findByUsername(username);
+////	}
 //	
-//	public void deleteUser(String username) {
-//		userRepo.deleteByUsername(username);
-//	}
+////	public void updateUser(String username, String newUsername) {
+////		userRepo.updateByUsername(username, newUsername);
+////	}
+//	
+////	public void deleteUser(String username) {
+////		userRepo.deleteByUsername(username);
+////	}
 //}

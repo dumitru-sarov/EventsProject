@@ -16,7 +16,7 @@
 //import com.events.services.UserServices;
 //
 //@RestController
-//@CrossOrigin
+//@CrossOrigin("*")
 //public class UsersController {
 //
 //	@Autowired
@@ -33,21 +33,28 @@
 //		return "User Created";
 //	}
 //	
-//	@GetMapping("findUser/{username}")
+//	@GetMapping("findByUsername/{username}")
 //	public Users findUser(@PathVariable String username) {
-//		return userService.findByUser(username);
+//		return userService.findUser(username);
 //	}
 //	
-//	@PutMapping("updateUser/{username}/{newUsername}")
-//	public String userUpdate(@PathVariable String username, @PathVariable String newUsername) {
-//		userService.updateUser(username, newUsername);
-//		return "User updated";
-//	} 
 //	
-//	@DeleteMapping("deleteUser/{username}")
-//	public String deleteUser(@PathVariable String username) {
-//		userService.deleteUser(username);
-//		return "User deleted";
-//	}
-//	
+////	
+////	@GetMapping("findUser/{username}")
+////	public Users findUser(@PathVariable String username) {
+////		return userService.findByUser(username);
+////	}
+////	
+////	@PutMapping("updateUser/{username}/{newUsername}")
+////	public String userUpdate(@PathVariable String username, @PathVariable String newUsername) {
+////		userService.updateUser(username, newUsername);
+////		return "User updated";
+////	} 
+////	
+////	@DeleteMapping("deleteUser/{username}")
+////	public String deleteUser(@PathVariable String username) {
+////		userService.deleteUser(username);
+////		return "User deleted";
+////	}
+////	
 //}

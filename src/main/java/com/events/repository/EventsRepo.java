@@ -16,11 +16,9 @@ public interface EventsRepo extends JpaRepository<Events, Integer>{
 	
 	public Events findByEventid(int eventid);
 
-	public ArrayList<Events> findAllByOrderByEventidAsc();
+	public ArrayList<Events> findAllByOrderByDateAsc();
 	
 	@Transactional
 	public void deleteByEventid(int eventid);
-
-
 	
 }

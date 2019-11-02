@@ -1,0 +1,11 @@
+.submitForm {
+  background-color: red;
+  color: black;
+  border: 1em;
+  border-style: inset;
+  padding: 10px;
+}
+
+span {
+  color: red;
+}

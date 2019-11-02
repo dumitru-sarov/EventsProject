@@ -22,12 +22,19 @@ public class Events {
 	@Id
 	@GeneratedValue
 	private int eventid;
-	private String title;
+	private String title;	
 	private String description;
 	private String locationinfo;
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date date;
+	private String eventtype;
 	
+	public String getEventtype() {
+		return eventtype;
+	}
+	public void setEventtype(String eventtype) {
+		this.eventtype = eventtype;
+	}
 	public int getEventid() {
 		return eventid;
 	}

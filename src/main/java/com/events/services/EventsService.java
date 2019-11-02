@@ -15,7 +15,7 @@ public class EventsService {
 	private EventsRepo eventRepo;
 	
 	public ArrayList<Events> findAllEvents() {
-		return eventRepo.findAllByOrderByEventidAsc();
+		return eventRepo.findAllByOrderByDateAsc();
 	}
 	
 	public Events eventById(int eventid) {
@@ -33,6 +33,7 @@ public class EventsService {
 		updateEvent.setDescription(event.getDescription());
 		updateEvent.setLocationinfo(event.getLocationinfo());
 		updateEvent.setDate(event.getDate());
+		updateEvent.setEventtype(event.getEventtype());
 		eventRepo.save(updateEvent);
 		
 	}
